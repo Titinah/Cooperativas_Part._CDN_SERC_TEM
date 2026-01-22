@@ -1,7 +1,3 @@
-¡Claro que sí! Aquí tienes una propuesta de README.md profesional y detallado, diseñado específicamente para el código que compartiste.
-
-Está estructurado para explicar tanto la funcionalidad para el usuario final como la lógica técnica para otros desarrolladores.
-
 📘 Libro de Capital y Socios - Evolución de Participaciones
 Aplicación web independiente (Single Page Application) diseñada para gestionar la evolución del capital social y las cuotas de participación en cooperativas o sociedades. Desarrollada con la imagen corporativa del Centro de Negocios Sercotec Temuco.
 
