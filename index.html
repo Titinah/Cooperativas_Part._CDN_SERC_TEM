@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro Evolución Capital | CDN Sercotec</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/kgDCs5xX/imagen-2026-01-08-145205602-preview-rev-1.png">
+
+    <style>
+        :root {
+            --sercotec-blue: #004B8D;      
+            --sercotec-dark: #1d3557;      
+            --sercotec-red: #E30613;       
+            --sercotec-light-blue: #ebf2fa;
+            --bg-body: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-body);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Sercotec Style */
+        .navbar-custom {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--sercotec-red); /* Adaptado de liquidador */
+            padding: 1rem 0;
+        }
+        .brand-text h1 { 
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            margin: 0; 
+            color: var(--sercotec-blue);
+        }
+        .brand-text p { 
+            font-size: 0.85rem; 
+            margin: 0; 
+            color: #6c757d;
+        }
+
+        /* Cards & Containers */
+        .card-custom {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            background: white;
+        }
+        .card-header-custom {
+            background-color: var(--sercotec-blue);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            padding: 15px 20px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Buttons */
+        .btn-sercotec {
+            background-color: var(--sercotec-blue);
+            color: white;
+            border: none;
+        }
+        .btn-sercotec:hover {
+            background-color: var(--sercotec-dark);
+            color: white;
+        }
+        .btn-action-sm {
+            padding: 2px 8px;
+            font-size: 0.85rem;
+        }
+
+        /* Table Styling */
+        .table-custom thead {
+            background-color: var(--sercotec-light-blue);
+            color: var(--sercotec-dark);
+        }
+        .table-custom th {
+            font-weight: 600;
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+        .table-custom td {
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+        .input-cell {
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            width: 100%;
+            padding: 4px;
+            font-size: 0.9rem;
+        }
+        .input-cell:focus {
+            border-color: var(--sercotec-blue);
+            outline: none;
+            background-color: #f0f8ff;
+        }
+        
+        /* Utility */
+        .currency { text-align: right; }
+        .number { text-align: right; }
+        .badge-year {
+            background-color: var(--sercotec-red);
+            font-size: 0.9rem;
+        }
+        .summary-box {
+            background: var(--sercotec-light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--sercotec-blue);
+        }
+
+        /* Footer Custom */
+        .footer-custom {
+            margin-top: auto !important;
+            background-color: #212529;
+            color: #ccc;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+            border-top: 5px solid var(--sercotec-red);
+        }
+        .footer-title { color: white; font-weight: 700; margin-bottom: 15px; font-size: 1.1rem; }
+        .footer-link { color: #ccc; text-decoration: none; transition: color 0.2s; display: block; margin-bottom: 8px; }
+        .footer-link:hover { color: white; text-decoration: none; }
+        .footer-social a { color: white; font-size: 3.0rem; margin-right: 15px; transition: opacity 0.2s; }
+        .footer-social a:hover { opacity: 0.7; }
+        .footer-divider { border-color: #444; margin: 20px 0; }
+        @media print {
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-custom sticky-top no-print">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center">
+                <img src="https://www.sercotec.cl/centros-de-negocios/wp-content/uploads/sites/4/2020/09/la-araucania-temuco-cdn-logo.png" alt="Sercotec" height="85" class="me-3">
+                <div class="brand-text border-start ps-3 border-2">
+                    <h1 class="h5 mb-0 fw-bold" style="color: var(--sercotec-blue);">Libro de Capital y Socios</h1>
+                    <p class="small mb-0 text-muted">Evolución de Participaciones</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm" onclick="resetSystem()">
+                    <i class="bi bi-trash"></i> Reiniciar
+                </button>
+                <button class="btn btn-sercotec btn-sm" onclick="exportExcel()">
+                    <i class="bi bi-file-earmark-excel"></i> Exportar
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container flex-grow-1 py-4">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <div class="card-header-custom">
+                        <span><i class="bi bi-calendar-event me-2"></i>Periodo</span>
+                    </div>
+                    <div class="card-body">
+                        <label class="form-label">Seleccionar Año de Cierre</label>
+                        <select id="yearSelector" class="form-select mb-3" onchange="renderYearView()">
+                            </select>
+                        
+                        <div class="d-grid gap-2 mb-2">
+                            <button class="btn btn-outline-primary btn-sm" onclick="addNewYear()">
+                                <i class="bi bi-plus-circle"></i> Abrir Nuevo Año
+                            </button>
+                        </div>
+                        <div class="d-grid gap-2" id="divDeleteYear" style="display:none;">
+                            <button class="btn btn-outline-danger btn-sm" onclick="deleteYear()">
+                                <i class="bi bi-trash"></i> Eliminar Año
+                            </button>
+                        </div>
+
+                        <hr>
+                        <h6 class="text-muted">Parámetros del Año <span id="displayYearParams"></span></h6>
+                        
+                        <div class="mb-2">
+                            <label class="small text-muted">Modalidad de Aportes</label>
+                            <select id="selectContributionType" class="form-select" onchange="updateYearParams()">
+                                <option value="capital">Solo Aumento de Capital</option>
+                                <option value="cuotas">Emisión de Nuevas Cuotas</option>
+                            </select>
+                            <small class="text-muted" style="font-size: 0.75rem;" id="contributionHelp">Se suma al capital, mantiene cuotas.</small>
+                        </div>
+                        <div class="mb-2" id="divMontoAportes">
+                            <label class="small text-muted">Monto Unitario de Aportes ($)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="inputMontoAportes" class="form-control" oninput="formatCurrencyInput(this)" onchange="updateYearParams()">
+                            </div>
+                        </div>
+                        <div class="mb-2" id="divNuevasCuotas" style="display:none;">
+                            <label class="small text-muted">Número de Nuevas Cuotas</label>
+                            <input type="number" id="inputNuevasCuotas" class="form-control" step="0.01" onchange="updateYearParams()">
+                        </div>
+                        <div class="mb-2">
+                            <label class="small text-muted">Remanente / Pérdida del Periodo</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" id="inputRemanente" class="form-control" oninput="formatSignedCurrencyInput(this)" onchange="updateYearParams()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card card-custom h-100">
+                    <div class="card-header-custom">
+                        <span><i class="bi bi-calculator me-2"></i>Resumen Financiero</span>
+                        <span class="badge badge-year" id="badgeYear"></span>
+                    </div>
+                    <div class="card-body">
+                        <div id="alertWarnings"></div>
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-3">
+                                <div class="summary-box">
+                                    <small class="text-muted d-block">Capital Total</small>
+                                    <h4 class="fw-bold" id="sumCapital">$0</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="summary-box">
+                                    <small class="text-muted d-block">Total Cuotas</small>
+                                    <h4 class="fw-bold" id="sumCuotas">0</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="summary-box">
+                                    <small class="text-muted d-block">Valor Cuota de Participación</small>
+                                    <h4 class="fw-bold text-primary" id="valCuota">$0</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alert alert-light border mt-2">
+                            <i class="bi bi-info-circle-fill text-primary me-2"></i>
+                            <small id="logicExplanation">Selecciona un año para ver el cálculo.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-custom">
+            <div class="card-header-custom">
+                <span><i class="bi bi-people-fill me-2"></i>Detalle por Socio</span>
+                <button class="btn btn-light btn-sm text-primary fw-bold" onclick="modalNewPartner()">
+                    <i class="bi bi-person-plus-fill"></i> Ingresar Socio
+                </button>
+            </div>
+            <div class="card-body p-0 table-responsive">
+                <table class="table table-custom table-hover mb-0" id="mainTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">Socio</th>
+                            <th class="text-end">Cap. Inicial</th>
+                            <th class="text-end text-primary" style="width: 15%">+ Aportación</th>
+                            <th class="text-end text-success">+ Remanente</th>
+                            <th class="text-end fw-bold" style="background:#f8f9fa">Capital Final</th>
+                            <th class="text-end">Cuotas Inic.</th>
+                            <th class="text-end text-success">+ Nuevas</th>
+                            <th class="text-end fw-bold">Cuotas Fin.</th>
+                            <th class="text-center">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        </tbody>
+                </table>
+            </div>
+            <div class="card-footer text-muted small">
+                * El cálculo de nuevas cuotas se basa en el valor cuota del cierre del año anterior.
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer-custom no-print">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Síguenos</h5>
+                    
+                    <div class="footer-social mt-3">
+                        <a href="https://www.instagram.com/cdntemuco?igsh=N3A3enRscWc4bzFw" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/cdnsercotectemuco" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.sercotec.cl/centros-de-negocios/centro-de-desarrollo-de-negocios-temuco%E2%80%8B/" target="_blank"><i class="bi bi-globe"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Contacto</h5>
+                    <p class="mb-2"><i class="bi bi-geo-alt me-2 text-danger"></i> D. Portales N°806 - 4° Piso, Temuco</p>
+                    <p class="mb-2"><i class="bi bi-envelope me-2 text-danger"></i> centro.temuco@centrossercotec.cl</p>
+                    <p class="mb-2"><i class="bi bi-telephone me-2 text-danger"></i> +56 45 2 596 773</p>
+                    <p class="mb-2"><i class="bi bi-clock me-2 text-danger"></i> Lun - Vie: 09:00 - 18:00</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Enlaces de Interés</h5>
+                    <a href="https://www.sercotec.cl" class="footer-link">Sitio Web Sercotec</a>
+                    <a href="https://capacitacion.sercotec.cl" class="footer-link">Portal de Capacitación</a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <small>&copy; 2026 - Centro de Negocios Sercotec Temuco. Todos los derechos reservados.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <img src="https://www.sercotec.cl/wp-content/uploads/2018/08/logo.png" alt="Sercotec Blanco" height="30" style="opacity: 0.6;">
+                </div>
+            </div>
+        </div>
+    
+        <button onclick="alert('Consideración: Los resultados son estimativos y de carácter ilustrativo, no representan una realidad exacta sobre la contabilidad de la cooperativa, sea cauteloso con lo aquí mostrado. Además, si te gustó mi sitio o necesitas ayuda, contáctame a: personalinvestments.live@gmail.com. Ten un buen día :)')" 
+                class="btn btn-light border shadow-sm no-print"
+                style="position: fixed; bottom: 10px; right: 10px; z-index: 9999; border-radius: 20px; font-size: 11px; padding: 4px 10px; opacity: 0.9;">
+            <i class="bi bi-envelope-heart text-danger"></i> Info
+        </button>
+    </footer>
+
+    <div class="modal fade" id="modalPartner" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Ingresar Nuevo Socio</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formPartner">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="newPartnerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">RUT</label>
+                            <input type="text" class="form-control" id="newPartnerRut" required oninput="formatRut(this)">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha de Incorporación</label>
+                            <input type="date" class="form-control" id="newPartnerDate" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">Aporte Capital ($)</label>
+                                <input type="text" class="form-control" id="newPartnerCapital" required oninput="formatCurrencyInput(this)">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">Cuotas Asignadas</label>
+                                <input type="number" class="form-control" id="newPartnerQuotas" required value="100">
+                            </div>
+                        </div>
+                        <div class="alert alert-warning small">
+                            <i class="bi bi-exclamation-triangle"></i> El socio ingresará en el año seleccionado actualmente (<span id="modalYearSpan"></span>).
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-sercotec" onclick="saveNewPartner()">Guardar Socio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRetire" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title">Registrar Salida de Socio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El socio dejará de aparecer en los años siguientes al actual (<span id="modalRetireYearSpan"></span>).</p>
+                    <form id="formRetire">
+                        <input type="hidden" id="retirePartnerId">
+                        <div class="mb-3">
+                            <label class="form-label">Fecha de Salida</label>
+                            <input type="date" class="form-control" id="retireDate" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning" onclick="confirmRetirePartner()">Confirmar Salida</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- DATA STRUCTURE ---
+        // State management for Cooperativa
+        let appData = {
+            years: [],
+            params: {},
+            socios: []
+        };
+
+        let currentViewYear = null;
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            recalculateAllLogic(); // Run the core engine
+            updateYearSelector();
+            renderYearView();
+        });
+
+        // --- CORE LOGIC ENGINE (The "Rigorous" Part) ---
+        function recalculateAllLogic() {
+            // Sort years chronologically
+            appData.years.sort((a, b) => a - b);
+            const socios = appData.socios;
+            
+            // Temporary storage for calculation running totals
+            let socioState = {}; // Key: socioId, Value: { currentCapital, currentQuotas }
+
+            // Iterate through every year
+            appData.years.forEach((year, index) => {
+                const params = appData.params[year] || { contributionType: 'capital', montoAportes: 0, nuevasCuotas: 0, remanente: 0 };
+                const prevYear = appData.years[index - 1];
+                
+                // Calculate Pre-Distribution Value per Quota (from Previous Year Close)
+                let prevTotalCapital = 0;
+                let prevTotalQuotas = 0;
+                
+                if (prevYear) {
+                    socios.forEach(s => {
+                        if (s.history && s.history[prevYear]) {
+                            prevTotalCapital += s.history[prevYear].capitalFinal;
+                            prevTotalQuotas += s.history[prevYear].cuotasFinal;
+                        }
+                    });
+                }
+                
+                // Value Quota base for new quotas (avoid div by zero)
+                let valorCuotaBase = (prevTotalQuotas > 0) ? (prevTotalCapital / prevTotalQuotas) : 10000;
+
+                // --- PASS 2: Distribution Logic ---
+                // We need total quotas valid for distribution to split the remanente and aportes
+                let totalQuotasForDist = 0;
+                let eligibleSociosCount = 0;
+                socios.forEach(s => {
+                    if (s.startYear <= year) {
+                        if (s.exitYear && year >= s.exitYear) return;
+                        // Get base quotas (either initial or carried over)
+                        let q = (s.startYear === year) ? s.initialQuotas : s.history[prevYear].cuotasFinal;
+                        totalQuotasForDist += q;
+                        
+                        // Count eligible socios (not new, not retiring)
+                        if (s.startYear < year && !(s.exitYear === year)) {
+                            eligibleSociosCount++;
+                        }
+                    }
+                });
+
+                // Calculate accumulated remanente up to current year (only include if not yet distributed)
+                let accumulatedRemanente = 0;
+                let runningBalance = 0;
+                
+                // Simulate accumulation history to determine current distributable amount
+                for (let i = 0; i <= index; i++) {
+                    const y = appData.years[i];
+                    const p = appData.params[y] || { remanente: 0 };
+                    runningBalance += p.remanente;
+                    
+                    // If this is a past year and balance was positive, it was distributed. Reset for next year.
+                    if (i < index && runningBalance > 0) {
+                        runningBalance = 0;
+                    }
+                }
+                accumulatedRemanente = runningBalance;
+                
+                // Calculate remanente distribution for eligible socios
+                let remanentePorSocio = 0;
+                if (accumulatedRemanente > 0 && eligibleSociosCount > 0) {
+                    remanentePorSocio = Math.round(accumulatedRemanente / eligibleSociosCount);
+                }
+
+                // Now calculate individual values
+                socios.forEach(s => {
+                    if (s.startYear > year) return;
+
+                    if (s.exitYear && year > s.exitYear) {
+                        s.history[year] = null;
+                        return;
+                    }
+
+                    let isNew = (s.startYear === year);
+                    let isRetiring = (s.exitYear === year);
+                    let baseCapital = isNew ? s.initialCapital : s.history[prevYear].capitalFinal;
+                    let baseQuotas = isNew ? s.initialQuotas : s.history[prevYear].cuotasFinal;
+
+                    // Aportaciones (Contributions) - individual contributions
+                    let contributionAmount = (s.contributions && s.contributions[year]) ? s.contributions[year] : 0;
+                    let contributionQuotas = 0;
+
+                    if (contributionAmount !== 0 && !isRetiring) {
+                        if (params.contributionType === 'cuotas') {
+                            contributionQuotas = contributionAmount / valorCuotaBase;
+                        }
+                    }
+
+                    // Distribución del Monto Unitario de Aportes
+                    let montoAportesDistribuido = 0;
+                    let montoAportesQuotas = 0;
+                    
+                    if (!isRetiring && !isNew && params.montoAportes > 0) {
+                        montoAportesDistribuido = params.montoAportes;
+                        
+                        // Las nuevas cuotas se generan solo si la modalidad es cuotas
+                        if (params.contributionType === 'cuotas' && params.nuevasCuotas > 0) {
+                            montoAportesQuotas = params.nuevasCuotas;
+                        }
+                    }
+
+                    // Remanente Share (distribución del remanente acumulado positivo)
+                    let remanentePorSocioActual = 0;
+                    let addedQuotas = 0;
+                    
+                    if (!isRetiring && !isNew && remanentePorSocio > 0) {
+                        remanentePorSocioActual = remanentePorSocio;
+                    }
+
+                    // Finalize Record
+                    s.history[year] = {
+                        capitalInicial: baseCapital,
+                        cuotasInicial: baseQuotas,
+                        revalorizacion: contributionAmount,
+                        montoAportesDistribuido: montoAportesDistribuido,
+                        remanente: 0,
+                        remanentePorSocio: remanentePorSocioActual,
+                        capitalFinal: baseCapital + contributionAmount + montoAportesDistribuido + remanentePorSocioActual,
+                        nuevasCuotas: addedQuotas + contributionQuotas + montoAportesQuotas,
+                        cuotasFinal: baseQuotas + addedQuotas + contributionQuotas + montoAportesQuotas
+                    };
+                });
+            });
+            
+            saveData();
+        }
+
+        // --- UI FUNCTIONS ---
+
+        function renderYearView() {
+            if (appData.years.length === 0) {
+                document.getElementById('badgeYear').innerText = "---";
+                document.getElementById('displayYearParams').innerText = "---";
+                document.getElementById('tableBody').innerHTML = '<tr><td colspan="10" class="text-center text-muted py-5">No hay periodos registrados. Utilice "Abrir Nuevo Año" para comenzar.</td></tr>';
+                document.getElementById('sumCapital').innerText = "$0";
+                document.getElementById('sumCuotas').innerText = "0";
+                document.getElementById('valCuota').innerText = "$0";
+                document.getElementById('logicExplanation').innerText = "Inicie un año para ver cálculos.";
+                document.getElementById('divDeleteYear').style.display = 'none';
+                return;
+            }
+
+            let year = parseInt(document.getElementById('yearSelector').value);
+            if (isNaN(year)) year = currentViewYear;
+            if (!year && appData.years.length > 0) year = appData.years[appData.years.length - 1];
+
+            currentViewYear = year;
+            
+            // Show/hide delete year button
+            const divDeleteYear = document.getElementById('divDeleteYear');
+            if (appData.years.length > 1) {
+                divDeleteYear.style.display = 'block';
+            } else {
+                divDeleteYear.style.display = 'none';
+            }
+            
+            // Update UI Labels
+            document.getElementById('badgeYear').innerText = year;
+            document.getElementById('displayYearParams').innerText = year;
+            document.getElementById('modalYearSpan').innerText = year;
+            
+            // Set Inputs
+            const p = appData.params[year] || { contributionType: 'capital', montoAportes: 0, nuevasCuotas: 0, remanente: 0 };
+            document.getElementById('selectContributionType').value = p.contributionType;
+            
+            const helpText = document.getElementById('contributionHelp');
+            if(p.contributionType === 'capital') {
+                helpText.innerText = "Se suma al capital, mantiene cuotas.";
+                document.getElementById('divMontoAportes').style.display = 'block';
+                document.getElementById('divNuevasCuotas').style.display = 'none';
+            } else {
+                helpText.innerText = "Se suma al capital y genera nuevas cuotas.";
+                document.getElementById('divMontoAportes').style.display = 'block';
+                document.getElementById('divNuevasCuotas').style.display = 'block';
+            }
+
+            document.getElementById('inputMontoAportes').value = (p.montoAportes || 0).toLocaleString('es-CL');
+            document.getElementById('inputNuevasCuotas').value = p.nuevasCuotas || 0;
+            document.getElementById('inputRemanente').value = p.remanente.toLocaleString('es-CL');
+
+            // Render Table
+            const prevVal = getPrevYearVal(year);
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            let totalCap = 0;
+            let totalCuotas = 0;
+
+            appData.socios.forEach(s => {
+                if (!s.history || !s.history[year]) return; // Partner not active this year
+
+                const data = s.history[year];
+                if (s.exitYear !== year) {
+                    totalCap += data.capitalFinal;
+                    totalCuotas += data.cuotasFinal;
+                }
+
+                let statusBadge = '';
+                let actionBtn = '';
+
+                if (s.exitYear === year) {
+                    statusBadge = '<span class="badge bg-warning text-dark ms-1" style="font-size:0.7em">Retiro</span>';
+                    actionBtn = `<button class="btn btn-sm btn-outline-secondary border-0" onclick="cancelRetire(${s.id})" title="Cancelar Retiro"><i class="bi bi-arrow-counterclockwise"></i></button>`;
+                } else {
+                    actionBtn = `<button class="btn btn-sm btn-outline-warning border-0" onclick="retirePartner(${s.id})" title="Registrar Salida"><i class="bi bi-box-arrow-right"></i></button>`;
+                }
+
+                const contributionVal = (s.contributions && s.contributions[year]) ? s.contributions[year] : 0;
+                let contributionQuotasDisplay = '';
+                
+                // Si hay Monto Total de Aportes, mostrar el valor distribuido
+                let totalAportationDisplay = '';
+                if (p.montoAportes > 0) {
+                    totalAportationDisplay = fmtMoney(data.montoAportesDistribuido || 0);
+                    if (p.contributionType === 'cuotas' && (data.montoAportesDistribuido || 0) > 0) {
+                        const q = (data.montoAportesDistribuido || 0) / prevVal;
+                        contributionQuotasDisplay = `<div style="font-size: 0.75rem" class="text-muted">+ ${fmtNum(q)} cuotas</div>`;
+                    }
+                } else {
+                    // Sin monto total, mostrar el input individual y sus cuotas
+                    totalAportationDisplay = `<div class="input-group input-group-sm">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control form-control-sm text-end" 
+                                value="${contributionVal.toLocaleString('es-CL')}" 
+                                oninput="formatCurrencyInput(this)" 
+                                onchange="updatePartnerContribution(${s.id}, this)">
+                        </div>`;
+                    if (p.contributionType === 'cuotas' && contributionVal > 0) {
+                        const q = contributionVal / prevVal;
+                        contributionQuotasDisplay = `<div style="font-size: 0.75rem" class="text-muted">+ ${fmtNum(q)} cuotas</div>`;
+                    }
+                }
+
+                // Formatear fecha si existe
+                let dateDisplay = '';
+                if (s.entryDate) {
+                    const [y, m, d] = s.entryDate.split('-');
+                    dateDisplay = `<div class="small text-muted" style="font-size: 0.75rem"><i class="bi bi-calendar-check"></i> Ingreso: ${d}/${m}/${y}</div>`;
+                }
+                if (s.exitYear === year && s.exitDate) {
+                    const [y, m, d] = s.exitDate.split('-');
+                    dateDisplay += `<div class="small text-danger" style="font-size: 0.75rem"><i class="bi bi-calendar-x"></i> Salida: ${d}/${m}/${y}</div>`;
+                }
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <div class="fw-bold">${s.name} ${statusBadge}</div>
+                        <div class="small text-muted">${s.rut}</div>
+                        ${dateDisplay}
+                    </td>
+                    <td class="number text-muted">${fmtMoney(data.capitalInicial)}</td>
+                    <td class="number text-primary">
+                        ${totalAportationDisplay}
+                    </td>
+                    <td class="number text-success">${fmtMoney(data.remanentePorSocio || 0)}</td>
+                    <td class="number fw-bold" style="background:#f8f9fa">${fmtMoney(data.capitalFinal)}</td>
+                    <td class="number text-muted">${fmtNum(data.cuotasInicial)}</td>
+                    <td class="number text-success">+ ${fmtNum(data.nuevasCuotas)}</td>
+                    <td class="number fw-bold">${fmtNum(data.cuotasFinal)}</td>
+                    <td class="text-center">
+                        ${actionBtn}
+                        <button class="btn btn-sm btn-outline-danger border-0" onclick="deletePartner(${s.id})" title="Eliminar Historial">
+                            <i class="bi bi-x-circle"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Update Summary Headers
+            document.getElementById('sumCapital').innerText = fmtMoney(totalCap);
+            document.getElementById('sumCuotas').innerText = fmtNum(totalCuotas);
+            const accumulatedRemanente = getAccumulatedRemanente(year);
+            
+            // Si el remanente acumulado es positivo, ya fue distribuido a los socios
+            // Por lo tanto no se suma nuevamente en el cálculo del Valor Cuota
+            const remanentParaValorCuota = accumulatedRemanente > 0 ? 0 : accumulatedRemanente;
+            const valCuota = totalCuotas > 0 ? ((totalCap + remanentParaValorCuota) / totalCuotas) : 0;
+            document.getElementById('valCuota').innerText = fmtMoney(valCuota);
+
+            // Check for 20% rule warning
+            const warningContainer = document.getElementById('alertWarnings');
+            warningContainer.innerHTML = '';
+
+            if (totalCuotas > 0) {
+                const limit = totalCuotas * 0.20;
+                const offenders = appData.socios.filter(s => {
+                    return s.history && s.history[year] && s.exitYear !== year && s.history[year].cuotasFinal > limit;
+                });
+
+                if (offenders.length > 0) {
+                    const names = offenders.map(s => s.name).join(', ');
+                    warningContainer.innerHTML = `
+                        <div class="alert alert-danger small">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <strong>Advertencia Normativa:</strong> Los siguientes socios superan el 20% de las cuotas totales: <b>${names}</b>.
+                        </div>`;
+                }
+            }
+
+            // Update Logic Explanation
+            const modeText = p.contributionType === 'capital' ? 'Solo Capital' : 'Emisión de Cuotas';
+            let explanationText = `Cálculo ${year}: Modalidad <b>${modeText}</b>. `;
+            if (p.montoAportes > 0) {
+                explanationText += `Monto de Capital <b>${fmtMoney(p.montoAportes)}</b> por socio. `;
+            }
+            if (p.nuevasCuotas > 0) {
+                explanationText += `<b>${fmtNum(p.nuevasCuotas)}</b> nuevas cuotas por socio. `;
+            }
+            
+            // Add remanente distribution explanation
+            if (accumulatedRemanente > 0) {
+                explanationText += `<br><span style="color:#28a745;">Remanente Acumulado: <b>${fmtMoney(accumulatedRemanente)}</b></span>`;
+            } else if (accumulatedRemanente < 0) {
+                explanationText += `<br><span style="color:#dc3545;">Pérdida Acumulada: <b>${fmtMoney(accumulatedRemanente)}</b></span>`;
+            }
+            
+            explanationText += `<br>Valor Cuota: Capital Total <b>${fmtMoney(totalCap)}</b> / Cuotas Totales <b>${fmtNum(totalCuotas)}</b> = <b>${fmtMoney(valCuota)}</b>`;
+            document.getElementById('logicExplanation').innerHTML = explanationText;
+        }
+
+        function getPrevYearVal(currentYear) {
+            // Helper to find what value is used to divide the remanente
+            // This is purely for display, logic is in recalculateAllLogic
+            // We just re-derive it roughly here
+             const index = appData.years.indexOf(currentYear);
+             if (index <= 0) return 10000; // Default base
+             const prevYear = appData.years[index-1];
+             
+             let cap = 0, cuot = 0;
+             appData.socios.forEach(s => {
+                 if(s.history && s.history[prevYear]) {
+                     cap += s.history[prevYear].capitalFinal;
+                     cuot += s.history[prevYear].cuotasFinal;
+                 }
+             });
+             return cuot > 0 ? cap/cuot : 10000;
+        }
+
+        function getAccumulatedRemanente(currentYear) {
+            // Calculate the accumulated gain/loss from all years up to and including current year
+            let runningBalance = 0;
+            const yearIndex = appData.years.indexOf(currentYear);
+            
+            for (let i = 0; i <= yearIndex; i++) {
+                const y = appData.years[i];
+                const p = appData.params[y] || { remanente: 0 };
+                runningBalance += p.remanente;
+                
+                // If this is a past year and balance was positive, it was distributed. Reset.
+                if (i < yearIndex && runningBalance > 0) {
+                    runningBalance = 0;
+                }
+            }
+            
+            return runningBalance;
+        }
+
+        function updateYearParams() {
+            const year = currentViewYear;
+            const type = document.getElementById('selectContributionType').value;
+            const montoRaw = document.getElementById('inputMontoAportes').value.replace(/\./g, '');
+            const monto = parseFloat(montoRaw) || 0;
+            const nuevasCuotas = parseFloat(document.getElementById('inputNuevasCuotas').value) || 0;
+            const remRaw = document.getElementById('inputRemanente').value.replace(/\./g, '');
+            const rem = parseFloat(remRaw) || 0;
+
+            appData.params[year] = { 
+                contributionType: type, 
+                montoAportes: monto,
+                nuevasCuotas: nuevasCuotas,
+                remanente: rem 
+            };
+            recalculateAllLogic();
+            renderYearView();
+        }
+
+        function updateYearSelector() {
+            const sel = document.getElementById('yearSelector');
+            sel.innerHTML = '';
+            appData.years.forEach(y => {
+                const opt = document.createElement('option');
+                opt.value = y;
+                opt.text = y;
+                if (y === currentViewYear) opt.selected = true;
+                sel.appendChild(opt);
+            });
+        }
+
+        function addNewYear() {
+            let newYear;
+            if (appData.years.length === 0) {
+                const input = prompt("Ingrese el año de inicio (Ej: 2018):");
+                if (!input) return;
+                newYear = parseInt(input);
+                if (isNaN(newYear)) return alert("Año inválido");
+            } else {
+                const lastYear = Math.max(...appData.years);
+                newYear = lastYear + 1;
+            }
+
+            appData.years.push(newYear);
+            appData.params[newYear] = { contributionType: 'capital', montoAportes: 0, nuevasCuotas: 0, remanente: 0 };
+            
+            recalculateAllLogic();
+            currentViewYear = newYear;
+            updateYearSelector();
+            renderYearView();
+        }
+
+        function deleteYear() {
+            const year = currentViewYear;
+            if (!year) return alert("No hay año seleccionado");
+            
+            if(!confirm(`¿Está seguro de que desea eliminar el año ${year}? Esto eliminará todos los datos de ese período.`)) return;
+            
+            // Remove year from years array
+            appData.years = appData.years.filter(y => y !== year);
+            
+            // Remove year params
+            delete appData.params[year];
+            
+            // Remove year history from all socios
+            appData.socios.forEach(s => {
+                if (s.history && s.history[year]) {
+                    delete s.history[year];
+                }
+            });
+            
+            // Set currentViewYear to last available year or null
+            if (appData.years.length > 0) {
+                currentViewYear = Math.max(...appData.years);
+            } else {
+                currentViewYear = null;
+            }
+            
+            recalculateAllLogic();
+            saveData();
+            updateYearSelector();
+            renderYearView();
+        }
+
+        // --- PARTNER MANAGEMENT ---
+        const modalPartner = new bootstrap.Modal(document.getElementById('modalPartner'));
+        const modalRetire = new bootstrap.Modal(document.getElementById('modalRetire'));
+
+        function modalNewPartner() {
+            if (appData.years.length === 0) return alert("Debe crear un año primero.");
+            document.getElementById('modalYearSpan').innerText = currentViewYear;
+            document.getElementById('formPartner').reset();
+            modalPartner.show();
+        }
+
+        function saveNewPartner() {
+            const name = document.getElementById('newPartnerName').value;
+            const rut = document.getElementById('newPartnerRut').value;
+            const entryDate = document.getElementById('newPartnerDate').value;
+            const capRaw = document.getElementById('newPartnerCapital').value.replace(/\./g, '');
+            const cap = parseFloat(capRaw);
+            const quotas = parseFloat(document.getElementById('newPartnerQuotas').value);
+
+            if (!name || !rut || !entryDate || isNaN(cap)) return alert("Complete los datos");
+
+            const newId = Date.now(); // Simple ID
+            appData.socios.push({
+                id: newId,
+                name: name,
+                rut: rut,
+                entryDate: entryDate,
+                startYear: currentViewYear,
+                initialCapital: cap,
+                initialQuotas: quotas,
+                contributions: {},
+                history: {}
+            });
+
+            recalculateAllLogic();
+            saveData();
+            renderYearView();
+            modalPartner.hide();
+        }
+
+        function retirePartner(id) {
+            const s = appData.socios.find(x => x.id === id);
+            if (!s) return;
+            
+            document.getElementById('modalRetireYearSpan').innerText = currentViewYear;
+            document.getElementById('retirePartnerId').value = id;
+            document.getElementById('retireDate').value = new Date().toISOString().split('T')[0];
+            
+            modalRetire.show();
+        }
+
+        function confirmRetirePartner() {
+            const id = parseInt(document.getElementById('retirePartnerId').value);
+            const date = document.getElementById('retireDate').value;
+            
+            if (!date) return alert("Debe seleccionar una fecha de salida");
+
+            const s = appData.socios.find(x => x.id === id);
+            if(s) {
+                s.exitYear = currentViewYear;
+                s.exitDate = date;
+                recalculateAllLogic();
+                saveData();
+                renderYearView();
+                modalRetire.hide();
+            }
+        }
+
+        function cancelRetire(id) {
+            const s = appData.socios.find(x => x.id === id);
+            if(s) {
+                delete s.exitYear;
+                delete s.exitDate;
+                recalculateAllLogic();
+                saveData();
+                renderYearView();
+            }
+        }
+
+        function deletePartner(id) {
+            if(!confirm("¿Eliminar socio? Esto recalculará toda la historia.")) return;
+            appData.socios = appData.socios.filter(s => s.id !== id);
+            recalculateAllLogic();
+            saveData();
+            renderYearView();
+        }
+
+        function updatePartnerContribution(id, input) {
+            const val = parseFloat(input.value.replace(/\./g, '')) || 0;
+            const s = appData.socios.find(x => x.id === id);
+            if (s) {
+                if (!s.contributions) s.contributions = {};
+                s.contributions[currentViewYear] = val;
+                recalculateAllLogic();
+                saveData();
+                renderYearView();
+            }
+        }
+
+        // --- UTILS & STORAGE ---
+        function fmtMoney(num) {
+            return "$" + num.toLocaleString('es-CL', { maximumFractionDigits: 0 });
+        }
+        function fmtNum(num) {
+            return num.toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+        }
+
+        function formatCurrencyInput(input) {
+            // Eliminar cualquier caracter que no sea número
+            let val = input.value.replace(/\D/g, '');
+            if (val === '') {
+                input.value = '';
+                return;
+            }
+            // Formatear con separadores de miles (formato CL)
+            input.value = parseInt(val).toLocaleString('es-CL');
+        }
+
+        function formatSignedCurrencyInput(input) {
+            let value = input.value;
+            if (value === '-') return;
+
+            const isNegative = value.startsWith('-');
+            let numPart = value.replace(/[^0-9]/g, '');
+
+            if (numPart) {
+                let formattedNum = parseInt(numPart, 10).toLocaleString('es-CL');
+                input.value = isNegative ? '-' + formattedNum : formattedNum;
+            } else {
+                input.value = isNegative ? '-' : '';
+            }
+        }
+
+        function formatRut(input) {
+            let rut = input.value.replace(/[^0-9kK]/g, '');
+            
+            if (rut.length <= 1) {
+                input.value = rut;
+                return;
+            }
+            
+            const dv = rut.slice(-1);
+            const body = rut.slice(0, -1);
+            
+            input.value = body.replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "-" + dv;
+        }
+
+        function saveData() {
+            localStorage.setItem('sercotec_coop_db', JSON.stringify(appData));
+        }
+
+        function loadData() {
+            const saved = localStorage.getItem('sercotec_coop_db');
+            if (saved) {
+                appData = JSON.parse(saved);
+                if (appData.years.length > 0) {
+                    currentViewYear = Math.max(...appData.years);
+                }
+            }
+        }
+
+        function resetSystem() {
+            if(confirm("¿Borrar todos los datos y reiniciar?")) {
+                localStorage.removeItem('sercotec_coop_db');
+                location.reload();
+            }
+        }
+
+        function exportExcel() {
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Año,Socio,RUT,Fecha Incorporación,Fecha Salida,Capital Inicial,Aportación,Remanente,Capital Final,Cuotas Iniciales,Nuevas Cuotas,Cuotas Finales\n";
+
+            appData.years.forEach(year => {
+                appData.socios.forEach(s => {
+                    if(s.history && s.history[year]) {
+                        const h = s.history[year];
+                        const exitDateForExport = (s.exitYear === year) ? (s.exitDate || "") : "";
+                        let row = [
+                            year,
+                            s.name,
+                            s.rut,
+                            s.entryDate || "",
+                            exitDateForExport,
+                            h.capitalInicial,
+                            h.revalorizacion,
+                            h.remanente,
+                            h.capitalFinal,
+                            h.cuotasInicial.toFixed(4),
+                            h.nuevasCuotas.toFixed(4),
+                            h.cuotasFinal.toFixed(4)
+                        ].join(",");
+                        csvContent += row + "\n";
+                    }
+                });
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Registro_Socios_Sercotec.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+    </script>
+</body>
+</html>
